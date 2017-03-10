@@ -39,14 +39,14 @@ public class PigComputerPlayer extends GameComputerPlayer {
 
         PigGameState state = (PigGameState) info;
 
-        if (state.getPlayerID() != playerNum) {
-            return;
-        } else {
+        if (((PigLocalGame) game).canMove(playerNum)) {
             if (butt == 0) {
                 game.sendAction(new PigHoldAction(this));
             } else {
                 game.sendAction(new PigRollAction(this));
             }
+        } else {
+            return;
         }
         }
     }//receiveInfo
