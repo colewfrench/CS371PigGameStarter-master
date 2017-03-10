@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="98cadda63e5c1500a7885b5c82d6123afb4eb862">
+        <dex dex="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_233b5b5d84b6888127f55f36c7c0e802536ce2ab\classes.dex" />
+    </item>
+    <item
         jar="C:\Users\Public\Documents\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
-        jumboMode="false"
+        jumboMode="true"
         revision="22.0.1"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-9dbd5083a214f729a19b739197611203326f5cd3.jar" />
+        <dex dex="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="b9f355080fd47a061e2a928caa5156b5059336c4">
+        <dex dex="C:\Users\frenchco19\Downloads\CS371PigGameStarter-master\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c9b7dd9a50ce15836381d9e5bf135d669ead895d\classes.dex" />
     </item>
 
 </items>
