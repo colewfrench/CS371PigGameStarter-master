@@ -34,23 +34,20 @@ public class PigComputerPlayer extends GameComputerPlayer {
 
     @Override
     protected void receiveInfo(GameInfo info) {
+        if (info instanceof PigGameState)
+        {
+
         PigGameState state = (PigGameState) info;
 
-
-        if(state.getPlayerID() != playerNum)
-        {
+        if (state.getPlayerID() != playerNum) {
             return;
+        } else {
+            if (butt == 0) {
+                game.sendAction(new PigHoldAction(this));
+            } else {
+                game.sendAction(new PigRollAction(this));
+            }
         }
-        else
-        {
-           if(butt == 0)
-           {
-               game.sendAction(new PigHoldAction(this));
-           }
-            else
-           {
-               game.sendAction(new PigRollAction(this));
-           }
         }
     }//receiveInfo
 }
