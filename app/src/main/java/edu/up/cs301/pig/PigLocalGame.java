@@ -52,6 +52,7 @@ public class PigLocalGame extends LocalGame {
             // roll
             Random rand = new Random();
             int dieVal = rand.nextInt(6) + 1;
+            masterPigState.setDieValue(dieVal);
             if (dieVal != 1)
             {
                 int newTotal = masterPigState.getCurrentRunningTotal() + dieVal;
@@ -81,6 +82,7 @@ public class PigLocalGame extends LocalGame {
                 masterPigState.setPlayer1Score(updatedScore);
             }
 
+            masterPigState.setCurrentRunningTotal(0);
             masterPigState.setPlayerID(1 - masterPigState.getPlayerID());
             return true;
         }

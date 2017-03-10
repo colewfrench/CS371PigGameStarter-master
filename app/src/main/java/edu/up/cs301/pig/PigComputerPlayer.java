@@ -21,9 +21,6 @@ public class PigComputerPlayer extends GameComputerPlayer {
     public PigComputerPlayer(String name) {
         super(name);
     }
-
-    Random rand= new Random();
-    int butt = rand.nextInt(2);
     /**
      * callback method--game's state has changed
      *
@@ -36,18 +33,19 @@ public class PigComputerPlayer extends GameComputerPlayer {
     protected void receiveInfo(GameInfo info) {
         if (info instanceof PigGameState)
         {
+            PigGameState state = (PigGameState) info;
+            Random rand= new Random();
+            int butt = rand.nextInt(2);
 
-        PigGameState state = (PigGameState) info;
-
-        if (((PigLocalGame) game).canMove(playerNum)) {
-            if (butt == 0) {
-                game.sendAction(new PigHoldAction(this));
+            if (((PigLocalGame) game).canMove(playerNum)) {
+                if (butt == 0) {
+                    game.sendAction(new PigHoldAction(this));
+                } else {
+                    game.sendAction(new PigRollAction(this));
+                }
             } else {
-                game.sendAction(new PigRollAction(this));
+                return;
             }
-        } else {
-            return;
-        }
         }
     }//receiveInfo
 }
