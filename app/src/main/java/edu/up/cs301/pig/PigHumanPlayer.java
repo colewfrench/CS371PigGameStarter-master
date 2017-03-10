@@ -61,8 +61,17 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      */
     @Override
     public void receiveInfo(GameInfo info) {
-        //TODO You will implement this method to receive state objects from the game
-        Log.d("dsf","dsfsdf");
+        if (info instanceof PigGameState)
+        {
+            playerScoreTextView.setText("" + ((PigGameState) info).getPlayer0Score());
+            oppScoreTextView.setText("" + ((PigGameState) info).getPlayer1Score());
+            turnTotalTextView.setText("" + ((PigGameState) info).getCurrentRunningTotal());
+            setDieImage(((PigGameState) info).getDieValue());
+        }
+        else
+        {
+            flash(0, 1000);
+        }
     }//receiveInfo
 
     /**
@@ -73,7 +82,16 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      * 		the button that was clicked
      */
     public void onClick(View button) {
-        //TODO  You will implement this method to send appropriate action objects to the game
+        if (button == holdButton)
+        {
+            // hold
+            game.sendAction(new PigHoldAction(this));
+        }
+        if (button == dieImageButton)
+        {
+            // roll
+            game.sendAction(new PigRollAction(this));
+        }
     }// onClick
 
     /**
@@ -104,5 +122,31 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
         holdButton.setOnClickListener(this);
 
     }//setAsGui
+
+    private void setDieImage(int dieVal)
+    {
+        switch (dieVal)
+        {
+            case 1:
+                dieImageButton.setImageResource(R.drawable.face1);
+                break;
+            case 2:
+                dieImageButton.setImageResource(R.drawable.face2);
+                break;
+            case 3:
+                dieImageButton.setImageResource(R.drawable.face3);
+                break;
+            case 4:
+                dieImageButton.setImageResource(R.drawable.face4);
+                break;
+            case 5:
+                dieImageButton.setImageResource(R.drawable.face5);
+                break;
+            case 6:
+                dieImageButton.setImageResource(R.drawable.face6);
+                break;
+
+        }
+    }
 
 }// class PigHumanPlayer
