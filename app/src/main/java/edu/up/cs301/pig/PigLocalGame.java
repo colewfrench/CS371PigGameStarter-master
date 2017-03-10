@@ -81,6 +81,7 @@ public class PigLocalGame extends LocalGame {
                 masterPigState.setPlayer1Score(updatedScore);
             }
 
+            masterPigState.setPlayerID(1 - masterPigState.getPlayerID());
             return true;
         }
 
